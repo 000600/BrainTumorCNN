@@ -5,7 +5,7 @@ This convolutional neural network predicts whether or not a patient has a brain 
 - 1 Horizontal random flip layer (for image preprocessing)
 - 1 VGG16 base model (with an input shape of (128, 128, 3))
 - 1 Flatten layer
-- 1 Dropout layer (with a rate of 0.3)
+- 1 Dropout layer (with a dropout rate of 0.3)
 - 1 Hidden layer (with 256 neurons and a ReLU activation function
 - 1 Output layer (with 1 output neuron and a sigmoid activation function)
 
