@@ -2,7 +2,7 @@
 
 ## The Neural Network
 
-This convolutional neural network predicts whether or not a patient has a brain tumor based on an MRI. The model will predict a value close to 0 if the patient is predicted to not have a tumor and a 1 if the patient is predicted to have a tumor. The model uses the pretrained VGG16 base provided by Keras (these layers are untrained in the model) because I found that the model achieved far higher accuracy with it. Since the model only predicts binary categorical values, the model uses a binary crossentropy loss function and has 1 output neuron. The model uses a standard SGD optimizer with a learning rate of 0.001 and multiple dropout layers to prevent overfitting. The model has an architecture consisting of:
+This convolutional neural network predicts whether or not a patient has a brain tumor based on an MRI. The model will predict a value close to 0 if the patient is predicted to not have a tumor and a 1 if the patient is predicted to have a tumor. The model uses the pretrained VGG16 base provided by Keras (these layers are untrained in the model) because I found that the model achieved far higher accuracy with it. Since the model only predicts binary categorical values, the model uses a binary crossentropy loss function and has 1 output neuron. The model uses a standard SGD optimizer with a learning rate of 0.001 and a dropout layer to prevent overfitting. The model has an architecture consisting of:
 - 1 Horizontal random flip layer (for image preprocessing)
 - 1 VGG16 base model (with an input shape of (128, 128, 3))
 - 1 Flatten layer
@@ -10,7 +10,7 @@ This convolutional neural network predicts whether or not a patient has a brain 
 - 1 Hidden layer (with 256 neurons and a ReLU activation function
 - 1 Output layer (with 1 output neuron and a sigmoid activation function)
 
-Note that when running the **brain_tumor_cnn.py** file, you will need to input the path of the image dataset as a string — the location for where to put the path is signified near the top of the file with the word "< PATH >". There are two places a path needs to be entered: once when all the non-tumor images are being added to the dataset and once when all of the tumor images are being added to the dataset.
+Note that when running the **brain_tumor_cnn.py** file, you will need to input the paths of the tumor and non-tumor image sets as strings — the location for where to put the paths are signified in the file with the words "< PATH TO IMAGES THAT DEPICT A TUMOR >" and "< PATH TO IMAGES THAT DO NOT DEPICT A TUMOR >."
 
 Feel free to further tune the hyperparameters or build upon the model!
 
