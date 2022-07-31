@@ -137,7 +137,7 @@ plt.plot(epoch_list, auc, label = 'Training AUC')
 plt.plot(epoch_list, val_auc, label =' Validation AUC')
 plt.title('Validation and Training AUC Across Epochs')
 plt.xlabel('Epochs')
-plt.ylabel('auc')
+plt.ylabel('AUC')
 plt.legend()
 plt.show()
 
