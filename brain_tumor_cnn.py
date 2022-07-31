@@ -101,7 +101,7 @@ early_stopping = EarlyStopping(min_delta = 0.001, patience = 10, restore_best_we
 
 # Compile and train model
 model.compile(optimizer = opt, loss = 'binary_crossentropy', metrics = ['accuracy', AUC()])
-history = model.fit(x_train, y_train, epochs = epochs, batch_size = batch_size, validation_data = (x_test, y_test)) # To add early stopping, add "callbacks = [early_stopping]"
+history = model.fit(x_train, y_train, epochs = epochs, batch_size = batch_size, validation_data = (x_test, y_test)) # To add early stopping, add a "callbacks = [early_stopping]" parameter
 
 # Visualize  loss and validation loss
 history_dict = history.history
