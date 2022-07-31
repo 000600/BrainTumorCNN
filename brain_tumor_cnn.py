@@ -122,7 +122,7 @@ accuracy = history_dict['accuracy']
 val_accuracy = history_dict['val_accuracy']
 
 plt.plot(epoch_list, accuracy, label = 'Training Accuracy')
-plt.plot(epoch_list, val_accuracy, label =' Validation Accuracy')
+plt.plot(epoch_list, val_accuracy, label = 'Validation Accuracy')
 plt.title('Validation and Training Accuracy Across Epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
