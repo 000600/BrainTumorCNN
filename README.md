@@ -23,3 +23,6 @@ This neural network was created with the help of the Tensorflow and Scikit-Learn
 - Tensorflow Installation Instructions: https://www.tensorflow.org/install
 - Scikit-Learn's Website: https://scikit-learn.org/stable/
 - Scikit-Learn's Installation Instructions: https://scikit-learn.org/stable/install.html
+
+## Disclaimer
+Please note that I do not recommend, endorse, or encourage the use of any of my work here in actual medical use or application in any way. 
