@@ -18,12 +18,12 @@ from sklearn.model_selection import train_test_split
 class_map = {0 : "No Tumor", 1 : "Tumor"}
 
 # Initialize lists
-image_dataset = []
-labels = []
+x = []
+y = []
 
 # Get tumor images
 tumor_paths = []
-for r, d, f in os.walk(r' < PATH > '):
+for r, d, f in os.walk(r' < PATH TO IMAGES THAT DEPICT A TUMOR > '):
     for fi in f:
         if '.jpg' in fi:
             tumor_paths.append(os.path.join(r, fi)) # Add tumor images to the paths list
@@ -34,12 +34,12 @@ for path in tumor_paths:
     img = img.resize((128, 128)) # Resize images so that they are easy for the model to understand
     img = np.array(img)
     if (img.shape == (128, 128, 3)):
-        image_dataset.append(np.array(img)) # Add images to dataset
-        labels.append(1) # Add corresponding label to labels list
+        x.append(np.array(img)) # Add images to dataset
+        y.append(1) # Add corresponding label to Y list
 
 # Get non-tumor images     
 nontumor_paths = []
-for r, d, f in os.walk(r' < PATH > '):
+for r, d, f in os.walk(r' < PATH TO IMAGES THAT DO NOT DEPICT A TUMOR > '):
     for fi in f:
         if '.jpg' in fi:
             nontumor_paths.append(os.path.join(r, fi))
@@ -50,22 +50,27 @@ for path in nontumor_paths:
     img = img.resize((128, 128)) # Resize images so that they are easy for the model to understand
     img = np.array(img)
     if (img.shape == (128, 128, 3)):
-        image_dataset.append(np.array(img))
-        labels.append(0) # Append corresponding label to labels list
+        x.append(np.array(img))
+        y.append(0) # Append corresponding label to labels list
 
-# Convert dataset into a numpy array
-image_dataset = np.array(image_dataset)
+# Convert dataset into an array
+x = np.array(x)
 
-# Convert labels into a numpy array
-labels = np.array(labels)
-labels = labels.reshape(image_dataset.shape[0], 1)
+# Convert labels into an array
+y = np.array(y)
+y = y.reshape(x.shape[0], 1)
 
 # View shapes
-print('Dataset Shape:', image_dataset.shape)
-print('Label Shape:', labels.shape)
+print('Dataset Shape:', x.shape)
+print('Label Shape:', y.shape)
+
+# Balance dataset (make sure there are an even representation of instances with label 1 and label 0)
+x = x[0][0]
+smote = SMOTE()
+x, y = smote.fit_resample(x, y)
 
 # Split the dataset into training and testing sets
-x_train, x_test, y_train, y_test = train_test_split(image_dataset, labels, test_size = 0.3, shuffle = True, random_state = 1)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, shuffle = True, random_state = 1)
 
 # Set up epochs and batch size
 epochs = 20
