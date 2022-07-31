@@ -10,6 +10,8 @@ This convolutional neural network predicts whether or not a patient has a brain 
 - 1 Hidden layer (with 256 neurons and a ReLU activation function
 - 1 Output layer (with 1 output neuron and a sigmoid activation function)
 
+Note that when running the **brain_tumor_cnn.py** file, you will need to input the path of the image dataset as a string — the location for where to put the path is signified near the top of the file with the word "< PATH >". There are two places a path needs to be entereed: once when all the non-tumor images are being added to the dataset and once when all of the tumor images are being added to the dataset.
+
 Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
