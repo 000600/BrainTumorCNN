@@ -64,11 +64,6 @@ y = y.reshape(x.shape[0], 1)
 print('Dataset Shape:', x.shape)
 print('Label Shape:', y.shape)
 
-# Balance dataset (make sure there are an even representation of instances with label 1 and label 0)
-x = x[0][0]
-smote = SMOTE()
-x, y = smote.fit_resample(x, y)
-
 # Split the dataset into training and testing sets
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, shuffle = True, random_state = 1)
 
