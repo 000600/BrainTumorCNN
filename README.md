@@ -1,4 +1,4 @@
-# BrainTumorCNN
+# Brain Tumor CNN Classifier
 
 ## The Neural Network
 
@@ -15,7 +15,7 @@ Note that when running the **brain_tumor_cnn.py** file, you will need to input t
 Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
-The dataset can be found at this link: https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection. Credit for the dataset collection goes to **def me(x)**, **Loai abdalslam**, **Anshu Sinha**, and others on *Kaggle*. Note that the images from the original dataset are resized to 128 x 128 images so that they are more maneagable for the model. They are considered RGB by the model (the images have three color channels) because the VGG16 model only accepts images with three color channels. The dataset is not included because it is too large to stabley upload to Github, so just use the link about to find and download the dataset.
+The dataset can be found at this link: https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection. Credit for the dataset collection goes to **def me(x)**, **Loai abdalslam**, **Anshu Sinha**, and others on *Kaggle*. Note that the images from the original dataset are resized to 128 x 128 images so that they are more maneagable for the model. They are considered RGB by the model (the images have three color channels) because the VGG16 model only accepts images with three color channels. The dataset is not included in the repository because it is too large to stabley upload to Github, so just use the link about to find and download the dataset.
 
 ## Libraries
 This neural network was created with the help of the Tensorflow and Scikit-Learn libraries.
