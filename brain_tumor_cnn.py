@@ -71,7 +71,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, shuff
 epochs = 20
 batch_size = 32
 
-# Initialize SGD Optimizer
+# Initialize SGD optimizer
 opt = SGD(learning_rate = 0.001)
 
 # Initialize base model (VGG16)
